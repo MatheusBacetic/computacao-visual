@@ -83,6 +83,36 @@ blockquote { border-top: 1px solid rgba(255,255,255,.15); margin: 0; padding-top
 .article-ending span { font: 600 9px "Manrope"; letter-spacing: .17em; color: #315c80; }
 .article-ending p { margin: 0; font: 400 21px/1.6 Georgia, serif; color: #263642; max-width: 740px; }
 
+.featured-secondary { border-radius: 0; background: #e4e8e7; padding-top: 90px; }
+.featured-secondary h2 { font-size: clamp(3.1rem, 5.5vw, 5.7rem); }
+.eye-intro { grid-template-columns: .7fr 1fr; }
+.sensor-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sensor-card { padding: 30px; border: 1px solid #c3cbcd; border-radius: 24px; background: rgba(255,255,255,.35); }
+.sensor-card span { color: #61788b; font: 600 9px "Manrope"; letter-spacing: .17em; }
+.sensor-card h3 { margin: 45px 0 16px; color: #173b59; font: 500 22px "Manrope"; }
+.sensor-card p { margin: 0; color: #46545e; font: 400 15px/1.65 Georgia, serif; }
+.rgb-feature { display: grid; grid-template-columns: .85fr 1.15fr; gap: 8vw; align-items: center; padding: 80px 6vw; border-radius: 32px; background: #081421; color: white; box-shadow: 0 28px 60px rgba(7,20,33,.18); }
+.rgb-lights { position: relative; min-height: 360px; display: grid; place-items: center; isolation: isolate; }
+.rgb-lights span { position: absolute; width: 210px; height: 210px; border-radius: 50%; mix-blend-mode: screen; filter: blur(2px); opacity: .82; }
+.light-red { background: #d94946; transform: translate(-58px,-40px); }
+.light-green { background: #43a36c; transform: translate(58px,-40px); }
+.light-blue { background: #386fc1; transform: translateY(55px); }
+.rgb-lights strong { position: relative; z-index: 2; font: 500 30px "Manrope"; letter-spacing: .16em; }
+.rgb-copy h3 { margin: 24px 0; font: 400 clamp(2rem,4vw,3.5rem)/1.05 "Manrope"; letter-spacing: -.045em; }
+.rgb-copy p { color: #afbec9; font: 400 16px/1.7 Georgia, serif; }
+.rgb-copy strong { color: #edf5fa; }
+.rgb-copy .rgb-punchline { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.15); color: #e4edf3; font-size: 18px; }
+.contrast-note { display: grid; grid-template-columns: 22% 1fr 280px; gap: 5vw; align-items: center; padding: 80px 0; border-bottom: 1px solid #c2c9ca; }
+.contrast-note h3 { margin: 0 0 18px; color: #173b59; font: 500 25px "Manrope"; }
+.contrast-note p { margin: 0; color: #46545e; font: 400 16px/1.7 Georgia, serif; }
+.contrast-demo { display: grid; grid-template-columns: 1fr 1fr; height: 135px; overflow: hidden; border-radius: 20px; box-shadow: 0 14px 30px rgba(10,27,43,.12); }
+.contrast-demo span { display: grid; place-items: center; background: #13283b; }
+.contrast-demo span + span { background: #f5f1e8; }
+.contrast-demo i { width: 48px; height: 48px; background: #7d9cb2; border-radius: 50%; }
+.everyday-example h3 { margin: 0 0 15px; font: 500 24px "Manrope"; color: #173b59; }
+.everyday-example strong { color: #244f72; }
+.everyday-example .final-rule { margin-top: 26px; padding-top: 26px; border-top: 1px solid #c2c9ca; font-weight: 600; color: #112b41; }
+
 footer { max-width: 1440px; margin: auto; border-top: 1px solid var(--line); padding: 55px 5vw; display: flex; justify-content: space-between; align-items: center; color: #718190; font-size: 11px; }
 .footer-brand { color: #c7d0d7; }
 
@@ -92,6 +122,12 @@ footer { max-width: 1440px; margin: auto; border-top: 1px solid var(--line); pad
   h1 { font-size: clamp(3.3rem, 14vw, 5.2rem); }.hero-footer { margin-top: 80px; }
   .manifesto { grid-template-columns: 1fr; gap: 45px; padding: 90px 7vw; }
   .article-heading, .article-body, .article-ending { grid-template-columns: 1fr; gap: 45px; }
+  .eye-intro, .rgb-feature, .contrast-note { grid-template-columns: 1fr; }
+  .sensor-list { grid-template-columns: 1fr; }
+  .rgb-feature { padding: 55px 7vw; }
+  .rgb-lights { min-height: 280px; }
+  .rgb-lights span { width: 170px; height: 170px; }
+  .contrast-demo { max-width: 320px; width: 100%; }
   .featured { padding: 45px 7vw; border-radius: 28px 28px 0 0; }.featured-meta { gap: 12px; }.featured-meta span:nth-child(2) { display: none; }
   .article-heading { padding: 60px 0 45px; }.article-body { padding: 50px 0; }
   footer { align-items: flex-start; gap: 30px; flex-wrap: wrap; }
