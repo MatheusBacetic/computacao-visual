@@ -134,3 +134,189 @@ footer { max-width: 1440px; margin: auto; border-top: 1px solid var(--line); pad
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.scan-line { animation: none; } }
+
+/* Editorial article system */
+.featured {
+  --paper: #f2f0e9;
+  background: var(--paper);
+  padding: 0 max(7vw, calc((100vw - 1360px) / 2));
+  border-radius: 42px 42px 0 0;
+}
+.featured-meta { display: none; }
+.editorial-article { padding: 0 0 130px; }
+.article-heading {
+  display: block;
+  position: relative;
+  min-height: 650px;
+  padding: 92px 0 110px;
+}
+.article-kicker {
+  display: block;
+  color: #60788d;
+  font: 500 10px/1.8 "Manrope", sans-serif;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.article-heading h2 {
+  max-width: 920px;
+  width: 72%;
+  margin: 62px 0 0 5vw;
+  font-size: clamp(4.6rem, 8vw, 8.8rem);
+  line-height: .88;
+}
+.article-heading h2 em { display: inline-block; color: #557997; }
+.article-intro {
+  width: min(390px, 34%);
+  margin: 55px 8vw 0 auto;
+  color: #465866;
+  font: 400 18px/1.65 "DM Sans", sans-serif;
+}
+.article-date {
+  position: absolute;
+  left: 5vw;
+  bottom: 45px;
+  color: #768897;
+  font: 500 9px "Manrope", sans-serif;
+  letter-spacing: .17em;
+}
+.reading-column {
+  width: min(720px, 65vw);
+  margin-left: clamp(6vw, 15vw, 210px);
+}
+.prose-section { position: relative; margin: 0 0 105px; }
+.prose-section h3,
+.essay-ending h3 {
+  margin: 0 0 32px;
+  color: #526f87;
+  font: 500 10px "Manrope", sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.prose-section h3 span,
+.essay-ending h3 span {
+  position: absolute;
+  right: calc(100% + 38px);
+  color: #8a9aa6;
+}
+.reading-column p,
+.prose-section p {
+  color: #283946;
+  font: 400 18px/1.78 Georgia, serif;
+}
+.prose-section .lead-paragraph { font-size: 22px; line-height: 1.68; color: #1c3040; }
+.reading-column strong { color: #153d5e; }
+.editorial-interlude {
+  width: min(990px, 82vw);
+  margin: 20px 0 125px auto;
+  padding: 70px 0 75px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #173a57;
+  font: 500 clamp(2.2rem, 4.7vw, 4.8rem)/1.05 "Manrope", sans-serif;
+  letter-spacing: -.05em;
+}
+.editorial-interlude::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background: #738a9d;
+  transform-origin: left;
+  transition: transform 800ms cubic-bezier(.22, 1, .36, 1);
+}
+.editorial-interlude strong { margin: 8px 0 5px 23%; color: #8b9aa6; font-weight: 400; }
+.editorial-interlude em { margin-left: 11%; color: #52738f; }
+.concept-note {
+  width: min(760px, 72vw);
+  margin: 115px 0 130px 17vw;
+  padding-left: 42px;
+  border-left: 1px solid #9aaab5;
+}
+.concept-label { color: #708493; }
+.concept-flow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 35px 0 48px;
+  color: #244c6b;
+  font: 500 12px "Manrope", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.concept-flow i { color: #8399aa; font-style: normal; }
+.concept-note blockquote {
+  border: 0;
+  padding: 0;
+  color: #315b7c;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  line-height: 1.32;
+}
+.essay-ending { position: relative; margin: 0 0 150px; }
+.essay-ending p { max-width: 760px; font-size: 22px; line-height: 1.65; color: #1c3040; }
+.next-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  width: min(950px, 82vw);
+  margin: 0 0 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid #aeb9bf;
+}
+.next-entry > span { grid-column: 1 / -1; color: #708493; font: 500 9px "Manrope"; letter-spacing: .18em; text-transform: uppercase; }
+.next-entry strong { color: #122d43; font: 400 clamp(1.6rem, 3vw, 2.8rem)/1.2 "Manrope"; letter-spacing: -.035em; }
+.next-entry strong i { margin-right: 30px; color: #718797; font: 400 11px "Manrope"; letter-spacing: .12em; }
+.next-entry b { color: #315c7e; font: 400 28px "Manrope"; transition: transform 500ms cubic-bezier(.22,1,.36,1); }
+.next-entry:hover b { transform: translateX(8px); }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 750ms ease, transform 750ms cubic-bezier(.22,1,.36,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* The second entry keeps its visual subjects, but follows the looser editorial rhythm. */
+.featured-secondary { background: #e4e8e7; padding-top: 0; }
+.secondary-article .article-heading { min-height: 610px; }
+.secondary-article .article-body { border: 0; padding: 40px 0 120px; }
+.secondary-article .article-copy { margin-left: 7vw; }
+.secondary-article .sensor-card { border: 0; border-radius: 0; background: transparent; padding: 10px 25px 35px; border-left: 1px solid #aebabc; }
+.secondary-article .rgb-feature { border-radius: 0; margin-left: 5vw; margin-right: -7vw; }
+.secondary-article .contrast-note { border: 0; padding: 130px 4vw; }
+.secondary-article .article-ending { border: 0; padding: 50px 8vw 100px 25vw; display: block; }
+.secondary-article .article-ending span { display: block; margin-bottom: 28px; }
+
+@media (max-width: 800px) {
+  .featured { padding: 0 7vw; border-radius: 28px 28px 0 0; }
+  .editorial-article { padding-bottom: 85px; }
+  .article-heading { min-height: auto; padding: 70px 0 115px; }
+  .article-heading h2 { width: 100%; margin: 48px 0 0; font-size: clamp(3.8rem, 18vw, 6rem); }
+  .article-intro { width: 88%; margin: 42px 0 0 12%; font-size: 16px; }
+  .article-date { left: 0; bottom: 55px; }
+  .reading-column { width: 100%; margin-left: 0; }
+  .prose-section { margin-bottom: 80px; }
+  .prose-section h3 span, .essay-ending h3 span { position: static; margin-right: 12px; }
+  .prose-section .lead-paragraph { font-size: 20px; }
+  .reading-column p, .prose-section p { font-size: 17px; line-height: 1.72; }
+  .editorial-interlude { width: 100%; margin: 0 0 90px; padding: 50px 0; font-size: clamp(2.1rem, 11vw, 3.6rem); }
+  .editorial-interlude strong { margin-left: 10%; }
+  .editorial-interlude em { margin-left: 0; }
+  .concept-note { width: calc(100% - 5vw); margin: 85px 0 100px 5vw; padding-left: 22px; }
+  .concept-flow { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .concept-note blockquote { font-size: 1.85rem; }
+  .essay-ending { margin-bottom: 100px; }
+  .essay-ending p { font-size: 20px; }
+  .next-entry { width: 100%; }
+  .next-entry strong i { display: block; margin-bottom: 12px; }
+  .secondary-article .article-body { padding-bottom: 80px; }
+  .secondary-article .article-copy { margin-left: 0; }
+  .secondary-article .rgb-feature { margin: 0 -7vw; }
+  .secondary-article .contrast-note { padding: 90px 0; }
+  .secondary-article .article-ending { padding: 40px 0 80px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .next-entry b { transition: none; }
+}
