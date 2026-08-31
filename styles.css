@@ -287,6 +287,42 @@ footer { max-width: 1440px; margin: auto; border-top: 1px solid var(--line); pad
 .secondary-article .article-ending { border: 0; padding: 50px 8vw 100px 25vw; display: block; }
 .secondary-article .article-ending span { display: block; margin-bottom: 28px; }
 
+/* Post 03 — sampling and quantization */
+.featured-tertiary { background: #d8dfe1; border-radius: 0; }
+.sampling-opening { display: grid; grid-template-columns: 24% 1fr; gap: 5vw; padding: 30px 5vw 100px; }
+.sampling-opening p { margin: 0; max-width: 760px; color: #263946; font: 400 26px/1.55 Georgia, serif; }
+.sampling-opening strong { color: #17466b; }
+.two-decisions { display: grid; gap: 2px; margin: 0 -7vw; background: #81909b; }
+.decision-panel { display: grid; grid-template-columns: .8fr 1.2fr; gap: 7vw; align-items: center; min-height: 560px; padding: 85px max(7vw, calc((100vw - 1360px) / 2)); background: #edf0ed; }
+.decision-panel-dark { background: #091725; color: #edf3f6; }
+.decision-number { color: #52718a; font: 600 9px "Manrope"; letter-spacing: .18em; }
+.decision-copy h3 { margin: 26px 0; color: #173c59; font: 400 clamp(2.8rem, 5vw, 5.2rem)/1 "Manrope"; letter-spacing: -.055em; }
+.decision-copy p { color: #4b5c67; font: 400 17px/1.72 Georgia, serif; }
+.decision-panel-dark .decision-copy h3 { color: #e8f0f4; }
+.decision-panel-dark .decision-copy p { color: #aebec9; }
+.decision-panel-dark .decision-copy strong { color: #e2edf4; }
+.sampling-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; align-items: end; }
+.sampling-demo > span, .quantization-demo > span { color: #667b8a; font: 500 9px "Manrope"; letter-spacing: .15em; text-transform: uppercase; }
+.sample-grid { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d8edf7 0 7%, #5e8fac 22%, #244863 50%, #102537 72%); box-shadow: 0 25px 45px rgba(15,38,56,.2); }
+.sample-grid::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,247,249,.55) 1px, transparent 1px), linear-gradient(90deg, rgba(240,247,249,.55) 1px, transparent 1px); background-size: 25% 25%; }
+.sample-grid.fine::after { background-size: 8.333% 8.333%; opacity: .65; }
+.quantization-demo { display: grid; gap: 18px; }
+.tone-bar { height: 105px; border-radius: 18px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.tone-low { background: linear-gradient(90deg, #0b1b2a 0 25%, #41627b 25% 50%, #829eb0 50% 75%, #dfe9ec 75%); }
+.tone-high { background: linear-gradient(90deg, #0b1b2a, #dfe9ec); }
+.coordinate-note { display: grid; grid-template-columns: 20% 1fr 1fr; gap: 5vw; align-items: center; padding: 125px 4vw; }
+.coordinate-equation { display: flex; align-items: center; gap: 25px; color: #183e5b; }
+.coordinate-equation span { display: flex; flex-direction: column; }
+.coordinate-equation b { font: 400 clamp(2rem,4vw,4rem) Georgia, serif; }
+.coordinate-equation small { margin-top: 10px; color: #748895; font: 500 9px "Manrope"; letter-spacing: .16em; text-transform: uppercase; }
+.coordinate-equation i { color: #8194a0; font-style: normal; }
+.coordinate-note > p { color: #344956; font: 400 18px/1.65 Georgia, serif; }
+.sampling-conclusion { padding-top: 40px; }
+.sampling-summary { margin: 0 0 20px 8vw; padding: 45px 0 0 38px; border-left: 1px solid #8ca0ac; }
+.sampling-summary > span { color: #52718a; font: 600 9px "Manrope"; letter-spacing: .18em; }
+.sampling-summary blockquote { margin-top: 28px; color: #244d69; font-size: clamp(1.7rem,3vw,2.8rem); }
+.sampling-summary blockquote em { color: #587b92; }
+
 @media (max-width: 800px) {
   .featured { padding: 0 7vw; border-radius: 28px 28px 0 0; }
   .editorial-article { padding-bottom: 85px; }
@@ -314,6 +350,15 @@ footer { max-width: 1440px; margin: auto; border-top: 1px solid var(--line); pad
   .secondary-article .rgb-feature { margin: 0 -7vw; }
   .secondary-article .contrast-note { padding: 90px 0; }
   .secondary-article .article-ending { padding: 40px 0 80px; }
+  .sampling-opening, .decision-panel, .coordinate-note { grid-template-columns: 1fr; }
+  .sampling-opening { padding: 10px 0 75px; }
+  .sampling-opening p { font-size: 21px; }
+  .two-decisions { margin: 0 -7vw; }
+  .decision-panel { padding: 70px 7vw; min-height: 0; }
+  .sampling-demo { gap: 10px; }
+  .coordinate-note { padding: 90px 0; }
+  .sampling-conclusion { padding-top: 0; }
+  .sampling-summary { margin-left: 0; padding-left: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

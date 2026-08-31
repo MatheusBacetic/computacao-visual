@@ -23,6 +23,7 @@
       <a href="#manifesto">Sobre</a>
       <a href="#post-1">Post 01</a>
       <a href="#post-2">Post 02</a>
+      <a href="#post-3">Post 03</a>
     </nav>
     <a class="header-action" href="#post-1">Ler agora <span>↗</span></a>
   </header>
@@ -164,6 +165,75 @@
         <div class="article-ending everyday-example reveal">
           <span>EM RESUMO</span>
           <p>A computação visual não inventou as cores do zero. Ela apenas aprendeu a usar a luz de um jeito que combina com a forma como o olho humano enxerga o mundo.</p>
+        </div>
+
+        <a class="next-entry reveal" href="#post-3"><span>Próximo registro</span><strong><i>03</i> Amostragem e quantização</strong><b>→</b></a>
+      </article>
+    </section>
+
+    <section class="featured featured-tertiary" id="post-3">
+      <article class="editorial-article sampling-article">
+        <header class="article-heading reveal">
+          <span class="article-kicker">03 — Da luz ao número<br>Visão Computacional / 2026</span>
+          <h2>Amostragem<br><em>e quantização</em></h2>
+          <p class="article-intro">Antes de interpretar uma imagem, o computador precisa transformar uma cena contínua em uma coleção finita de pixels e valores.</p>
+          <span class="article-date">02 OUT 2026 · 4 MIN DE LEITURA</span>
+        </header>
+
+        <div class="sampling-opening reveal">
+          <span class="section-number">DISCRETIZAÇÃO</span>
+          <p>Uma câmera recebe luz continuamente. Já uma imagem digital precisa caber em uma grade e ser descrita por números. Essa passagem acontece em duas decisões: <strong>onde medir</strong> e <strong>qual valor registrar</strong>.</p>
+        </div>
+
+        <div class="two-decisions">
+          <section class="decision-panel reveal">
+            <div class="decision-copy">
+              <span class="decision-number">01 / ESPAÇO</span>
+              <h3>Amostragem</h3>
+              <p>Divide a cena em posições. Cada ponto da grade vira um pixel.</p>
+              <p>Quanto mais amostras, maior a <strong>resolução espacial</strong> e maior a capacidade de preservar detalhes.</p>
+            </div>
+            <div class="sampling-demo" aria-label="Comparação entre uma grade com poucas amostras e outra com muitas amostras">
+              <div class="sample-grid coarse"><i></i></div>
+              <span>poucas amostras</span>
+              <div class="sample-grid fine"><i></i></div>
+              <span>mais amostras</span>
+            </div>
+          </section>
+
+          <section class="decision-panel decision-panel-dark reveal">
+            <div class="decision-copy">
+              <span class="decision-number">02 / INTENSIDADE</span>
+              <h3>Quantização</h3>
+              <p>Converte a intensidade captada em um dos níveis disponíveis.</p>
+              <p>Com mais níveis, as transições ficam suaves. Com poucos, aparecem faixas visíveis — o chamado <strong>banding</strong>.</p>
+            </div>
+            <div class="quantization-demo" aria-label="Comparação entre poucos e muitos níveis de intensidade">
+              <div class="tone-bar tone-low"></div><span>4 níveis</span>
+              <div class="tone-bar tone-high"></div><span>256 níveis</span>
+            </div>
+          </section>
+        </div>
+
+        <div class="coordinate-note reveal">
+          <span class="section-number">A DIFERENÇA ESSENCIAL</span>
+          <div class="coordinate-equation">
+            <span><b>x, y</b><small>posição</small></span>
+            <i>→</i>
+            <span><b>f(x, y)</b><small>intensidade</small></span>
+          </div>
+          <p><strong>A amostragem escolhe as coordenadas.</strong> A quantização escolhe o valor que cada coordenada pode assumir.</p>
+        </div>
+
+        <div class="reading-column sampling-conclusion">
+          <section class="essay-ending reveal">
+            <h3><span>03</span> O equilíbrio</h3>
+            <p>Mais pixels não resolvem tudo, assim como mais níveis de intensidade não recuperam detalhes que nunca foram amostrados. A qualidade digital nasce do equilíbrio entre resolução espacial e profundidade de intensidade.</p>
+          </section>
+          <aside class="sampling-summary reveal">
+            <span>EM UMA FRASE</span>
+            <blockquote>“Amostragem define <em>quantos pontos</em> vemos; quantização define <em>quantos tons</em> cada ponto pode ter.”</blockquote>
+          </aside>
         </div>
       </article>
     </section>
