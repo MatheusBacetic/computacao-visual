@@ -24,6 +24,7 @@
       <a href="#post-1">Post 01</a>
       <a href="#post-2">Post 02</a>
       <a href="#post-3">Post 03</a>
+      <a href="#post-4">Post 04</a>
     </nav>
     <a class="header-action" href="#post-1">Ler agora <span>↗</span></a>
   </header>
@@ -234,6 +235,43 @@
             <span>EM UMA FRASE</span>
             <blockquote>“Amostragem define <em>quantos pontos</em> vemos; quantização define <em>quantos tons</em> cada ponto pode ter.”</blockquote>
           </aside>
+        </div>
+        <a class="next-entry reveal" href="#post-4"><span>Próximo registro</span><strong><i>04</i> Interpolação: preenchendo os espaços</strong><b>→</b></a>
+      </article>
+    </section>
+
+    <section class="featured featured-secondary" id="post-4">
+      <article class="editorial-article">
+        <header class="article-heading reveal">
+          <span class="article-kicker">04 — Entre um pixel e outro<br>Visão Computacional / 2026</span>
+          <h2>Interpolação:<br><em>preenchendo os espaços</em></h2>
+          <p class="article-intro">Ao ampliar uma foto, de onde vêm os novos pixels? O computador estima seus valores usando os pixels que já existem.</p>
+          <span class="article-date">2 MIN DE LEITURA</span>
+        </header>
+
+        <div class="reading-column">
+          <section class="prose-section reveal">
+            <h3><span>01</span> A ideia é simples</h3>
+            <p>Uma imagem é feita de pequenos pontos de cor: os <strong>pixels</strong>. Quando aumentamos seu tamanho, precisamos de mais pontos para preencher a imagem. A <strong>interpolação</strong> calcula esses valores a partir dos pontos ao redor.</p>
+            <p>É como estimar um tom entre o preto e o branco: no meio do caminho, podemos usar cinza. Essa ideia também ajuda a reduzir, girar e ajustar imagens.</p>
+          </section>
+
+          <section class="prose-section reveal">
+            <h3><span>02</span> Três maneiras de fazer isso</h3>
+            <p><strong>Vizinho mais próximo:</strong> copia a cor do pixel mais perto. É simples e rápido, mas pode deixar a imagem ampliada com aparência de blocos.</p>
+            <p><strong>Linear:</strong> calcula um valor entre dois pontos. Quanto mais perto de um deles, maior sua influência. Entre os valores 0 e 100, por exemplo, o ponto exatamente no meio vale 50.</p>
+            <p><strong>Bilinear:</strong> aplica a ideia da linear em duas direções, horizontal e vertical. Combina quatro pixels ao redor, dando mais influência aos mais próximos. O resultado costuma ser mais suave, mas pode ficar um pouco borrado.</p>
+          </section>
+
+          <aside class="concept-note reveal">
+            <span class="concept-label">Para guardar</span>
+            <blockquote>Interpolar é estimar o que falta usando o que já conhecemos.</blockquote>
+          </aside>
+
+          <section class="essay-ending reveal">
+            <h3><span>03</span> Mais pixels, não necessariamente mais detalhes</h3>
+            <p>A interpolação ajuda a mudar o tamanho de uma imagem, mas <strong>não recupera detalhes que não foram registrados</strong>. Ampliar uma foto pequena pode suavizar sua aparência, sem torná-la realmente mais detalhada.</p>
+          </section>
         </div>
       </article>
     </section>
