@@ -25,6 +25,7 @@
       <a href="#post-2">Post 02</a>
       <a href="#post-3">Post 03</a>
       <a href="#post-4">Post 04</a>
+      <a href="#post-5">Post 05</a>
     </nav>
     <a class="header-action" href="#post-1">Ler agora <span>↗</span></a>
   </header>
@@ -273,9 +274,65 @@
             <p>A interpolação ajuda a mudar o tamanho de uma imagem, mas <strong>não recupera detalhes que não foram registrados</strong>. Ampliar uma foto pequena pode suavizar sua aparência, sem torná-la realmente mais detalhada.</p>
           </section>
         </div>
+        <a class="next-entry reveal" href="#post-5"><span>Próximo registro</span><strong><i>05</i> Detecção de bordas</strong><b>→</b></a>
       </article>
     </section>
 
+    <section class="featured" id="post-5">
+      <article class="editorial-article edge-article">
+        <header class="article-heading reveal">
+          <span class="article-kicker">05 — Encontrando os contornos<br>Visão Computacional / 2026</span>
+          <h2>Detecção<br><em>de bordas</em></h2>
+          <p class="article-intro">Uma borda pode estar na imagem e passar despercebida pelo filtro. A posição e a orientação da máscara fazem diferença.</p>
+          <span class="article-date">3 MIN DE LEITURA</span>
+        </header>
+        <div class="reading-column">
+          <section class="prose-section reveal">
+            <h3><span>01</span> Onde a imagem muda</h3>
+            <p class="lead-paragraph">Detectar bordas é procurar mudanças bruscas na intensidade dos pixels. Quando uma região escura encontra uma clara, essa diferença pode revelar um contorno.</p>
+            <p>Para encontrar essas mudanças, usamos uma <strong>máscara</strong>: uma pequena matriz de pesos que percorre a imagem. Em cada posição, multiplicamos os valores dos pixels pelos pesos correspondentes e somamos os resultados.</p>
+          </section>
+          <section class="prose-section reveal">
+            <h3><span>02</span> Cada peso no lugar certo</h3>
+            <p>O ponto que mais me chamou a atenção foi que <strong>não basta escolher a máscara: é preciso aplicá-la corretamente</strong>. Em uma máscara 3 × 3 com referência central, o centro fica alinhado ao pixel analisado, e os outros pesos correspondem aos seus vizinhos.</p>
+            <p>Se os índices de linha e coluna forem trocados, ou se a resposta for gravada no pixel errado, o resultado pode mudar de direção ou aparecer deslocado. Dependendo do erro, a resposta da borda pode enfraquecer e acabar descartada na detecção.</p>
+            <p>A <strong>orientação</strong> também importa. Uma máscara que compara esquerda e direita percebe mudanças na horizontal, destacando bordas verticais. Uma que compara cima e baixo destaca bordas horizontais. Usar só uma direção pode deixar outros contornos passar.</p>
+          </section>
+        </div>
+        <figure class="edge-example reveal">
+          <figcaption><span class="tag">Um exemplo com Sobel</span><h3>A mesma borda.<br><em>Duas respostas.</em></h3></figcaption>
+          <div class="edge-matrices">
+            <div><span class="edge-label">Pixels da imagem</span><pre aria-label="Matriz de pixels: cada linha contém 0, 0, 100">  0   0 100
+  0   0 100
+  0   0 100</pre><p>Uma transição vertical entre escuro e claro.</p></div>
+            <div><span class="edge-label">Compara esquerda e direita</span><pre aria-label="Máscara Sobel x: menos 1, 0, 1; menos 2, 0, 2; menos 1, 0, 1"> −1   0   1
+ −2   0   2
+ −1   0   1</pre><p><strong>Gx = 400</strong><br>A mudança aparece com força.</p></div>
+            <div><span class="edge-label">Compara cima e baixo</span><pre aria-label="Máscara Sobel y: menos 1, menos 2, menos 1; 0, 0, 0; 1, 2, 1"> −1  −2  −1
+  0   0   0
+  1   2   1</pre><p><strong>Gy = 0</strong><br>As linhas iguais se cancelam.</p></div>
+          </div>
+          <p class="edge-explanation">Multiplicando os pesos pelos pixels nas mesmas posições, Gx resulta em 100 + 200 + 100 = 400. Em Gy, temos −100 + 100 = 0. A borda continua na imagem, mas <strong>essa segunda máscara, sozinha, não a evidencia</strong>.</p>
+        </figure>
+        <div class="reading-column">
+          <section class="prose-section reveal">
+            <h3><span>03</span> Para não perder a borda</h3>
+            <p>No Sobel, combinamos as respostas das duas direções pela magnitude do gradiente: <strong>√(Gx² + Gy²)</strong>. No exemplo, ela vale 400. Assim, uma resposta nula em uma direção não esconde a mudança encontrada na outra.</p>
+            <p>Também precisamos preservar respostas negativas durante o cálculo: elas indicam o sentido da mudança entre claro e escuro. Zerar esses valores antes de calcular a magnitude pode eliminar bordas reais.</p>
+          </section>
+          <aside class="concept-note edge-takeaway reveal">
+            <span class="concept-label">Para guardar</span>
+            <blockquote>A borda pode estar lá. Se a máscara comparar os vizinhos errados, o resultado pode não mostrar isso.</blockquote>
+          </aside>
+          <section class="essay-ending reveal">
+            <h3><span>04</span> O cuidado faz parte da detecção</h3>
+            <p>Entendi que a máscara não apaga a borda da imagem original, mas uma aplicação incorreta pode ocultá-la no resultado. Conferir o alinhamento, a ordem dos pesos e as direções analisadas é essencial para que o contorno seja detectado e apareça no lugar certo.</p>
+            <p>Outro cuidado é o ruído, que também provoca mudanças bruscas. Suavizar antes pode ajudar, mas suavizar demais também enfraquece os detalhes que queremos encontrar.</p>
+          </section>
+          <p class="edge-source">Material de apoio: <cite>Detecção de bordas</cite>, Prof. André Kishimoto — Computação Visual, 2026.</p>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer>

@@ -365,3 +365,22 @@ footer { max-width: 1440px; margin: auto; border-top: 1px solid var(--line); pad
   .reveal { opacity: 1; transform: none; transition: none; }
   .next-entry b { transition: none; }
 }
+
+/* Post 05 — edge detection */
+.edge-example { margin: 0 0 110px; padding: clamp(24px, 5vw, 64px); border-radius: 30px; background: linear-gradient(135deg, #17334c, #091725 65%); color: #f2f0e9; box-shadow: 0 24px 50px rgba(7, 20, 33, .15); }
+.edge-example .tag { color: #a8bdcd; }
+.edge-example h3 { margin: 24px 0 48px; font: 400 clamp(2rem, 4vw, 3.5rem)/1.1 "Manrope", sans-serif; letter-spacing: -.04em; }
+.edge-example h3 em { color: #b7c6d4; }
+.edge-matrices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.edge-label { display: block; min-height: 30px; color: #b7c6d4; font: 500 10px/1.6 "Manrope", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.edge-matrices pre { width: fit-content; padding: 18px 12px; border-inline: 1px solid #6e8ba3; border-radius: 12px; color: #f2f0e9; font: 400 clamp(15px, 1.8vw, 21px)/1.8 monospace; }
+.edge-example p { color: #b7c6d4; font: 400 17px/1.7 Georgia, serif; }
+.edge-example strong { color: #f2f0e9; }
+.edge-explanation { margin: 32px 0 0; padding-top: 28px; border-top: 1px solid rgba(211, 226, 238, .2); }
+.edge-takeaway { width: 100%; margin-left: 0; }
+.reading-column .edge-source { font: 400 13px/1.7 "DM Sans", sans-serif; color: #536878; }
+@media (max-width: 800px) {
+  .edge-matrices { grid-template-columns: 1fr; gap: 28px; }
+  .edge-matrices pre { font-size: 20px; }
+  .edge-example { margin-bottom: 80px; }
+}
