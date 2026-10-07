@@ -26,6 +26,7 @@
       <a href="#post-3">Post 03</a>
       <a href="#post-4">Post 04</a>
       <a href="#post-5">Post 05</a>
+      <a href="#post-6">Post 06</a>
     </nav>
     <a class="header-action" href="#post-1">Ler agora <span>↗</span></a>
   </header>
@@ -330,6 +331,45 @@
             <p>Outro cuidado é o ruído, que também provoca mudanças bruscas. Suavizar antes pode ajudar, mas suavizar demais também enfraquece os detalhes que queremos encontrar.</p>
           </section>
           <p class="edge-source">Material de apoio: <cite>Detecção de bordas</cite>, Prof. André Kishimoto — Computação Visual, 2026.</p>
+        </div>
+        <a class="next-entry reveal" href="#post-6"><span>Próximo registro</span><strong><i>06</i> Quando diminuir inventa detalhes</strong><b>→</b></a>
+      </article>
+    </section>
+
+    <section class="featured featured-secondary" id="post-6">
+      <article class="editorial-article">
+        <header class="article-heading reveal">
+          <span class="article-kicker">06 — Domínio da frequência<br>Visão Computacional / 2026</span>
+          <h2>Quando diminuir<br><em>inventa detalhes</em></h2>
+          <p class="article-intro">Uma parte da aula que ficou na cabeça: às vezes, borrar um pouco a imagem ajuda ela a ficar melhor depois de reduzida.</p>
+          <span class="article-date">07 OUT 2026 · 3 MIN DE LEITURA</span>
+        </header>
+        <div class="reading-column">
+          <section class="prose-section reveal">
+            <h3><span>01</span> Menor parecia mais simples</h3>
+            <p class="lead-paragraph">Eu pensava que diminuir uma imagem era só tirar alguns pixels e pronto. Ela ficava menor, perdia um pouco de detalhe e seguia a vida. Só que essa conta tem uma pegadinha: a redução também pode fazer aparecer um padrão que nem estava ali.</p>
+            <p>Pensa numa foto de uma camisa com listras bem fininhas. Quando a imagem fica pequena, as listras podem parecer ondas ou formar umas manchas estranhas. A imagem meio que se confunde nos detalhes. O nome desse efeito é <strong>aliasing</strong>.</p>
+          </section>
+          <section class="prose-section reveal">
+            <h3><span>02</span> Onde entra a frequência?</h3>
+            <p>Nessa parte da aula, frequência tem a ver com <strong>o quanto a intensidade varia ao longo da imagem</strong>. Uma região com mudanças suaves tem baixas frequências. Já listras finas, bordas e outros detalhes com mudanças rápidas envolvem altas frequências.</p>
+            <p>Quando reduzimos a imagem, sobram menos amostras para representar essas variações. Se a amostragem for insuficiente, um padrão fino pode acabar parecendo outro, mais espaçado. Não é só perder informação: o resultado pode mostrar uma informação enganosa.</p>
+            <p>Foi aí que o assunto encaixou um pouco melhor pra mim. Ter menos pixels também muda o que a gente consegue representar sem confundir os padrões.</p>
+          </section>
+          <aside class="concept-note edge-takeaway reveal">
+            <span class="concept-label">A parte que parece ao contrário</span>
+            <blockquote>Dar uma leve borrada antes pode deixar a redução mais fiel depois.</blockquote>
+          </aside>
+          <section class="prose-section reveal">
+            <h3><span>03</span> Suavizar antes de diminuir</h3>
+            <p>Para reduzir esse problema, usamos um <strong>filtro passa-baixa antes da reamostragem</strong>. Ele atenua as altas frequências, suavizando os detalhes que a imagem menor não vai conseguir representar direito. Esse cuidado faz parte do <strong>antialiasing</strong>.</p>
+            <p>Na foto da camisa, seria suavizar um pouco as listras antes de reduzir. Parece que estamos piorando a foto pra melhorar ela, mas tem uma lógica: abrir mão de alguns detalhes ajuda a evitar padrões falsos. Também não vale borrar tudo, porque aí os detalhes vão embora junto.</p>
+          </section>
+          <section class="essay-ending reveal">
+            <h3><span>04</span> O que ficou dessa parte</h3>
+            <p>Diminuir uma imagem exige escolher o que ela ainda consegue mostrar. O ponto que quero guardar é a ordem: suavizar primeiro, reduzir depois. Borrar no final não recupera a informação que já se misturou durante a amostragem.</p>
+          </section>
+          <p class="edge-source">Material de apoio: <cite>Domínio da Frequência</cite>, Prof. André Kishimoto — Computação Visual, 2026. Recorte: aliasing e antialiasing, slides 42–54.</p>
         </div>
       </article>
     </section>
