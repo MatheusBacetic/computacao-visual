@@ -27,6 +27,7 @@
       <a href="#post-4">Post 04</a>
       <a href="#post-5">Post 05</a>
       <a href="#post-6">Post 06</a>
+      <a href="#post-7">Post 07</a>
     </nav>
     <a class="header-action" href="#post-1">Ler agora <span>↗</span></a>
   </header>
@@ -370,6 +371,60 @@
             <p>Diminuir uma imagem exige escolher o que ela ainda consegue mostrar. O ponto que quero guardar é a ordem: suavizar primeiro, reduzir depois. Borrar no final não recupera a informação que já se misturou durante a amostragem.</p>
           </section>
           <p class="edge-source">Material de apoio: <cite>Domínio da Frequência</cite>, Prof. André Kishimoto — Computação Visual, 2026. Recorte: aliasing e antialiasing, slides 42–54.</p>
+        </div>
+        <a class="next-entry reveal" href="#post-7"><span>Próximo registro</span><strong><i>07</i> Uma imagem também tem ritmo</strong><b>→</b></a>
+      </article>
+    </section>
+
+    <section class="featured featured-frequency" id="post-7">
+      <article class="editorial-article">
+        <header class="article-heading reveal">
+          <span class="article-kicker">07 — Domínio da frequência<br>Visão Computacional / 2026</span>
+          <h2>Uma imagem<br>também tem <em>ritmo</em></h2>
+          <p class="article-intro">Olhar uma imagem no domínio da frequência é trocar a pergunta “onde está o detalhe?” por “com que velocidade a imagem muda?”.</p>
+          <span class="article-date">21 OUT 2026 · 4 MIN DE LEITURA</span>
+        </header>
+        <div class="reading-column">
+          <section class="prose-section reveal">
+            <h3><span>01</span> Dois jeitos de olhar</h3>
+            <p class="lead-paragraph">Até aqui, eu estava acostumado a pensar na imagem pelo lugar de cada pixel: sua coordenada, sua cor e seus vizinhos. Esse é o <strong>domínio espacial</strong>. No domínio da frequência, a imagem passa a ser descrita pelo ritmo com que sua intensidade muda.</p>
+            <p>Uma parede com iluminação uniforme muda devagar e concentra baixas frequências. Já uma textura com listras finas, uma borda ou um ruído muda rapidamente e traz componentes de alta frequência. A imagem continua sendo a mesma; o que muda é a forma de descrevê-la.</p>
+          </section>
+
+          <aside class="frequency-map reveal" aria-label="Relação entre uma imagem e suas frequências">
+            <div class="frequency-wave frequency-wave-low">
+              <span>baixa frequência</span>
+              <i></i>
+            </div>
+            <div class="frequency-wave frequency-wave-high">
+              <span>alta frequência</span>
+              <i></i>
+            </div>
+            <p>mudança lenta <b>→</b> mudança rápida</p>
+          </aside>
+
+          <section class="prose-section reveal">
+            <h3><span>02</span> A transformação</h3>
+            <p>A <strong>Transformada de Fourier</strong> funciona como uma tradução. Ela recebe a imagem no espaço e mostra quais frequências estão presentes, com que intensidade e em quais direções. Em vez de enxergar cada pixel isoladamente, conseguimos observar a composição dos padrões que formam a imagem.</p>
+            <p>Isso ajuda a separar estruturas diferentes. As baixas frequências carregam as variações mais suaves e a forma geral da cena. As altas frequências concentram detalhes, contornos e também parte do ruído. Não é uma divisão absoluta, mas é uma maneira poderosa de organizar o que estamos vendo.</p>
+          </section>
+
+          <aside class="concept-note edge-takeaway reveal">
+            <span class="concept-label">A ideia que ficou</span>
+            <blockquote>Filtrar uma imagem é escolher quais ritmos continuam e quais deixam de participar do resultado.</blockquote>
+          </aside>
+
+          <section class="prose-section reveal">
+            <h3><span>03</span> Filtros que escolhem o que fica</h3>
+            <p>Um <strong>filtro passa-baixa</strong> mantém as variações suaves e reduz as rápidas. Por isso ele suaviza a imagem, diminui ruídos e ajuda no antialiasing antes de reduzir a resolução. Já um <strong>filtro passa-alta</strong> faz o contrário: destaca mudanças rápidas e pode evidenciar bordas e detalhes.</p>
+            <p>O interessante é que não precisamos tratar todos os pixels da mesma maneira. Podemos modificar a composição das frequências e depois voltar ao domínio espacial para observar a imagem resultante. O filtro vira uma decisão sobre quais informações são úteis para a tarefa.</p>
+          </section>
+
+          <section class="essay-ending reveal">
+            <h3><span>04</span> O que mudou no meu olhar</h3>
+            <p>Entendi que o domínio da frequência não é uma imagem diferente, mas outra perspectiva sobre a mesma imagem. Pensar em frequências explica por que o desfoque pode remover ruído, por que uma borda é uma mudança rápida e por que reduzir sem preparar a imagem pode inventar padrões.</p>
+          </section>
+          <p class="edge-source">Material de apoio: <cite>Domínio da Frequência</cite>, Prof. André Kishimoto — Computação Visual, 2026.</p>
         </div>
       </article>
     </section>
