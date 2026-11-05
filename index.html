@@ -28,6 +28,7 @@
       <a href="#post-5">Post 05</a>
       <a href="#post-6">Post 06</a>
       <a href="#post-7">Post 07</a>
+      <a href="#post-8">Post 08</a>
     </nav>
     <a class="header-action" href="#post-1">Ler agora <span>↗</span></a>
   </header>
@@ -425,6 +426,40 @@
             <p>Entendi que o domínio da frequência não é uma imagem diferente, mas outra perspectiva sobre a mesma imagem. Pensar em frequências explica por que o desfoque pode remover ruído, por que uma borda é uma mudança rápida e por que reduzir sem preparar a imagem pode inventar padrões.</p>
           </section>
           <p class="edge-source">Material de apoio: <cite>Domínio da Frequência</cite>, Prof. André Kishimoto — Computação Visual, 2026.</p>
+        </div>
+        <a class="next-entry reveal" href="#post-8"><span>Próximo registro</span><strong><i>08</i> Da cena aos pixels</strong><b>→</b></a>
+      </article>
+    </section>
+    <section class="featured featured-secondary" id="post-8">
+      <article class="editorial-article">
+        <header class="article-heading reveal">
+          <span class="article-kicker">08 — Pipeline gráfica<br>Visão Computacional / 2026</span>
+          <h2>Da cena<br><em>aos pixels</em></h2>
+          <p class="article-intro">Como uma cena 3D vira uma imagem na tela, em quatro etapas.</p>
+          <span class="article-date">05 NOV 2026 · 1 MIN DE LEITURA</span>
+        </header>
+        <div class="reading-column">
+          <section class="prose-section reveal">
+            <h3><span>01</span> Aplicação</h3>
+            <p>É onde o programa organiza a cena: responde aos comandos do usuário, atualiza animações e calcula colisões. Essa etapa acontece principalmente na <strong>CPU</strong> e envia os dados dos objetos para a GPU.</p>
+          </section>
+          <section class="prose-section reveal">
+            <h3><span>02</span> Geometria</h3>
+            <p>Os vértices dos objetos são transformados conforme sua posição e a câmera. Depois, a cena é projetada, as partes fora do volume de visão são cortadas e as coordenadas são mapeadas para a tela.</p>
+          </section>
+          <section class="prose-section reveal">
+            <h3><span>03</span> Rasterização</h3>
+            <p>Identifica quais posições da grade de pixels são cobertas pelos triângulos. Para essas posições, gera <strong>fragmentos</strong>, com informações interpoladas dos vértices, como profundidade e cor.</p>
+          </section>
+          <section class="prose-section reveal">
+            <h3><span>04</span> Processamento de pixels</h3>
+            <p>Calcula a cor dos fragmentos usando materiais, luzes e texturas. O teste de profundidade verifica o que fica visível, e a mistura de cores combina o resultado com o que já está na imagem.</p>
+          </section>
+          <section class="essay-ending reveal">
+            <h3>O que ficou</h3>
+            <p>A aplicação organiza, a geometria posiciona, a rasterização encontra os fragmentos e o processamento de pixels define sua aparência na imagem.</p>
+          </section>
+          <p class="edge-source">Material de apoio: <cite>Pipeline Gráfica</cite>, Prof. André Kishimoto — Computação Visual, 2026.</p>
         </div>
       </article>
     </section>
